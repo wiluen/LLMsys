@@ -1,0 +1,448 @@
+{
+  "total_requests": 300,
+  "successful_requests": 300,
+  "concurrency": 100,
+  "request_timeout": 30,
+  "max_output_tokens": 200,
+  "use_long_context": false,
+  "total_time": 22.722827196121216,
+  "requests_per_second": 13.202582469632562,
+  "total_output_tokens": 55987,
+  "latency": {
+    "average": 7.129634637832641,
+    "p50": 7.891035437583923,
+    "p95": 8.475638782978058,
+    "p99": 8.484441313743591
+  },
+  "tokens_per_second": {
+    "average": 26.422457811203927,
+    "p50": 24.941204150948558,
+    "p95": 23.590649737405258,
+    "p99": 23.42342151237222
+  },
+  "time_to_first_token(ttft)": {
+    "average": 0.34381524165471394,
+    "p50": 0.37335205078125,
+    "p95": 0.5675827383995057,
+    "p99": 0.5966766381263733
+  },
+  "time-per-output-token(tpot)": {
+    "average": 0.03840541968647197,
+    "p50": 0.03840541968647197,
+    "p95": 0.03840541968647197,
+    "p99": 0.03840541968647197
+  }
+}
+vllm serve llm/qwen/Qwen2-0.5B-Instruct --max-num-seqs 6091 --max-num-batched-tokens 535 --block-size 16 --scheduler-delay-factor 0.2361959235060398 --enable-prefix-caching --use-v2-block-manager
+ValueError: max_num_batched_tokens (535) is smaller than max_model_len (32768). This effectively limits the maximum sequence length to max_num_batched_tokens and makes vLLM reject longer sequences. Please increase max_num_batched_tokens or decrease max_model_len.
+vllm serve llm/qwen/Qwen2-0.5B-Instruct --max-num-seqs 1710 --max-num-batched-tokens 5789 --block-size 16 --scheduler-delay-factor 0.6114485564273784 --use-v2-block-manager
+ValueError: max_num_batched_tokens (5789) is smaller than max_model_len (32768). This effectively limits the maximum sequence length to max_num_batched_tokens and makes vLLM reject longer sequences. Please increase max_num_batched_tokens or decrease max_model_len.
+vllm serve llm/qwen/Qwen2-0.5B-Instruct --max-num-seqs 5261 --max-num-batched-tokens 2358 --block-size 16 --scheduler-delay-factor 0.32732642482468033
+ValueError: max_num_batched_tokens (2358) is smaller than max_model_len (32768). This effectively limits the maximum sequence length to max_num_batched_tokens and makes vLLM reject longer sequences. Please increase max_num_batched_tokens or decrease max_model_len.
+vllm serve llm/qwen/Qwen2-0.5B-Instruct --max-num-seqs 4310 --max-num-batched-tokens 2831 --block-size 8 --scheduler-delay-factor 1.1499933118500698 --enable-prefix-caching
+ValueError: max_num_batched_tokens (2831) is smaller than max_model_len (32768). This effectively limits the maximum sequence length to max_num_batched_tokens and makes vLLM reject longer sequences. Please increase max_num_batched_tokens or decrease max_model_len.
+vllm serve llm/qwen/Qwen2-0.5B-Instruct --max-num-seqs 1280 --max-num-batched-tokens 5821 --block-size 16 --scheduler-delay-factor 0.014985929798453146 --enable-prefix-caching
+ValueError: max_num_batched_tokens (5821) is smaller than max_model_len (32768). This effectively limits the maximum sequence length to max_num_batched_tokens and makes vLLM reject longer sequences. Please increase max_num_batched_tokens or decrease max_model_len.
+vllm serve llm/qwen/Qwen2-0.5B-Instruct --max-num-seqs 2134 --max-num-batched-tokens 8185 --block-size 16 --scheduler-delay-factor 1.595473067232271 --enable-prefix-caching
+ValueError: max_num_batched_tokens (8185) is smaller than max_model_len (32768). This effectively limits the maximum sequence length to max_num_batched_tokens and makes vLLM reject longer sequences. Please increase max_num_batched_tokens or decrease max_model_len.
+
+
+
+vllm serve llm/qwen/Qwen2-0.5B-Instruct --max-num-seqs 3563 --max-num-batched-tokens 7472 --block-size 32 --scheduler-delay-factor 1.6759809854478747 --enable-chunked-prefill --enable-prefix-caching --disable-custom-all-reduce --use-v2-block-manager
+19344MiB /  46068MiB
+{
+  "total_requests": 300,
+  "successful_requests": 300,
+  "concurrency": 100,
+  "request_timeout": 30,
+  "max_output_tokens": 200,
+  "use_long_context": false,
+  "total_time": 23.603930950164795,
+  "requests_per_second": 12.70974739899862,
+  "total_output_tokens": 55595,
+  "latency": {
+    "average": 7.353046549956004,
+    "p50": 8.115015745162964,
+    "p95": 9.14820545911789,
+    "p99": 9.156294553279876
+  },
+  "tokens_per_second": {
+    "average": 25.56487581910926,
+    "p50": 24.382565691087247,
+    "p95": 21.846891208308016,
+    "p99": 21.266893642857212
+  },
+  "time_to_first_token(ttft)": {
+    "average": 0.35068366924921673,
+    "p50": 0.41180551052093506,
+    "p95": 0.49595104455947875,
+    "p99": 0.5214530515670776
+  },
+  "time-per-output-token(tpot)": {
+    "average": 0.039864686324597484,
+    "p50": 0.039864686324597484,
+    "p95": 0.039864686324597484,
+    "p99": 0.039864686324597484
+  }
+}
+
+{
+  "total_requests": 300,
+  "successful_requests": 300,
+  "concurrency": 100,
+  "request_timeout": 30,
+  "max_output_tokens": 200,
+  "use_long_context": false,
+  "total_time": 17.5279324054718,
+  "requests_per_second": 17.115538390959745,
+  "total_output_tokens": 56550,
+  "latency": {
+    "average": 5.146100431283315,
+    "p50": 5.65794575214386,
+    "p95": 5.989919626712799,
+    "p99": 6.0212824010849
+  },
+  "tokens_per_second": {
+    "average": 38.802763527102144,
+    "p50": 35.268195757924666,
+    "p95": 31.718098148608302,
+    "p99": 22.962083918185137
+  },
+  "time_to_first_token(ttft)": {
+    "average": 0.6786089261372884,
+    "p50": 0.7594362497329712,
+    "p95": 1.2865694046020513,
+    "p99": 1.6664387440681456
+  },
+  "time-per-output-token(tpot)": {
+    "average": 0.027802349139653584,
+    "p50": 0.027802349139653584,
+    "p95": 0.027802349139653584,
+    "p99": 0.027802349139653584
+  }
+}
+
+vllm serve llm/qwen/Qwen2-0.5B-Instruct --max-num-seqs 972 --max-num-batched-tokens 6268 --block-size 32 --scheduler-delay-factor 0.6083402185069822 --enable-chunked-prefill --use-v2-block-manager
+{
+  "total_requests": 300,
+  "successful_requests": 300,
+  "concurrency": 100,
+  "request_timeout": 30,
+  "max_output_tokens": 200,
+  "use_long_context": false,
+  "total_time": 15.336662769317627,
+  "requests_per_second": 19.560969978434745,
+  "total_output_tokens": 56040,
+  "latency": {
+    "average": 4.697544280687968,
+    "p50": 5.457625150680542,
+    "p95": 5.66543790102005,
+    "p99": 5.676970517635345
+  },
+  "tokens_per_second": {
+    "average": 41.51688705412398,
+    "p50": 36.44548158359845,
+    "p95": 33.90223973704697,
+    "p99": 28.44204439362624
+  },
+  "time_to_first_token(ttft)": {
+    "average": 0.5016749437650044,
+    "p50": 0.49723684787750244,
+    "p95": 0.8220201253890992,
+    "p99": 0.8459971141815186
+  },
+  "time-per-output-token(tpot)": {
+    "average": 0.025552019591572526,
+    "p50": 0.025552019591572526,
+    "p95": 0.025552019591572526,
+    "p99": 0.025552019591572526
+  }
+}
+{
+  "total_requests": 300,
+  "successful_requests": 300,
+  "concurrency": 100,
+  "request_timeout": 30,
+  "max_output_tokens": 200,
+  "use_long_context": false,
+  "total_time": 22.217549562454224,
+  "requests_per_second": 13.502839237814714,
+  "total_output_tokens": 56365,
+  "latency": {
+    "average": 6.980173438390096,
+    "p50": 7.578555226325989,
+    "p95": 8.26939790248871,
+    "p99": 8.274518804550171
+  },
+  "tokens_per_second": {
+    "average": 27.129883386663526,
+    "p50": 26.32621197519026,
+    "p95": 24.176155597927398,
+    "p99": 22.908678026464088
+  },
+  "time_to_first_token(ttft)": {
+    "average": 0.31628196795781455,
+    "p50": 0.34937453269958496,
+    "p95": 0.43573589324951173,
+    "p99": 0.44742349863052366
+  },
+  "time-per-output-token(tpot)": {
+    "average": 0.037297039714457025,
+    "p50": 0.037297039714457025,
+    "p95": 0.037297039714457025,
+    "p99": 0.037297039714457025
+  }
+}
+
+{
+  "total_requests": 300,
+  "successful_requests": 300,
+  "concurrency": 100,
+  "request_timeout": 30,
+  "max_output_tokens": 200,
+  "use_long_context": false,
+  "total_time": 20.4227397441864,
+  "requests_per_second": 14.689508056106865,
+  "total_output_tokens": 56646,
+  "latency": {
+    "average": 6.402486178080241,
+    "p50": 7.558335065841675,
+    "p95": 7.735823261737823,
+    "p99": 7.739931848049164
+  },
+  "tokens_per_second": {
+    "average": 30.632642254686857,
+    "p50": 26.04455731319627,
+    "p95": 25.846220627663936,
+    "p99": 24.729865113381152
+  },
+  "time_to_first_token(ttft)": {
+    "average": 0.3749951871236165,
+    "p50": 0.3696866035461426,
+    "p95": 0.6455058336257935,
+    "p99": 0.6776785945892334
+  },
+  "time-per-output-token(tpot)": {
+    "average": 0.033953615120252766,
+    "p50": 0.033953615120252766,
+    "p95": 0.033953615120252766,
+    "p99": 0.033953615120252766
+  }
+}
+
+vllm serve llm/qwen/Qwen2-0.5B-Instruct --max-num-seqs 1723 --max-num-batched-tokens 5865 --block-size 32 --scheduler-delay-factor 0.2506672920490747 --enable-chunked-prefill --enable-prefix-caching --use-v2-block-manager
+{
+  "total_requests": 300,
+  "successful_requests": 300,
+  "concurrency": 100,
+  "request_timeout": 30,
+  "max_output_tokens": 200,
+  "use_long_context": false,
+  "total_time": 19.816431522369385,
+  "requests_per_second": 15.138951715971212,
+  "total_output_tokens": 55710,
+  "latency": {
+    "average": 6.067529973189036,
+    "p50": 5.918450355529785,
+    "p95": 8.087865173816681,
+    "p99": 8.097013063430786
+  },
+  "tokens_per_second": {
+    "average": 31.311728150467644,
+    "p50": 33.15888729698767,
+    "p95": 24.725535686742017,
+    "p99": 24.377604788470016
+  },
+  "time_to_first_token(ttft)": {
+    "average": 0.3675584316253662,
+    "p50": 0.3981740474700928,
+    "p95": 0.5094778418540955,
+    "p99": 0.5385337805747986
+  },
+  "time-per-output-token(tpot)": {
+    "average": 0.0328204831724906,
+    "p50": 0.0328204831724906,
+    "p95": 0.0328204831724906,
+    "p99": 0.0328204831724906
+  }
+}
+{
+  "total_requests": 300,
+  "successful_requests": 300,
+  "concurrency": 100,
+  "request_timeout": 30,
+  "max_output_tokens": 200,
+  "use_long_context": false,
+  "total_time": 21.169589519500732,
+  "requests_per_second": 14.171271470504887,
+  "total_output_tokens": 56020,
+  "latency": {
+    "average": 6.722004142602285,
+    "p50": 7.1298301219940186,
+    "p95": 8.898248016834259,
+    "p99": 8.912839756011962
+  },
+  "tokens_per_second": {
+    "average": 28.774591527759597,
+    "p50": 28.000012545399507,
+    "p95": 22.473321220394144,
+    "p99": 22.434020183504263
+  },
+  "time_to_first_token(ttft)": {
+    "average": 0.3244591315587362,
+    "p50": 0.3608884811401367,
+    "p95": 0.4440980672836304,
+    "p99": 0.4674417161941528
+  },
+  "time-per-output-token(tpot)": {
+    "average": 0.0361597763486871,
+    "p50": 0.0361597763486871,
+    "p95": 0.0361597763486871,
+    "p99": 0.0361597763486871
+  }
+}
+
+------{
+  "total_requests": 300,
+  "successful_requests": 300,
+  "concurrency": 100,
+  "request_timeout": 30,
+  "max_output_tokens": 200,
+  "use_long_context": false,
+  "total_time": 27.157445430755615,
+  "requests_per_second": 11.046694386809008,
+  "total_output_tokens": 54598,
+  "latency": {
+    "average": 8.22290923277537,
+    "p50": 8.155957102775574,
+    "p95": 12.184635531902314,
+    "p99": 13.74021297931671
+  },
+  "tokens_per_second": {
+    "average": 23.15524890945997,
+    "p50": 23.277304859913755,
+    "p95": 14.448565417387163,
+    "p99": 9.247902071391398
+  },
+  "time_to_first_token(ttft)": {
+    "average": 1.8461831005414326,
+    "p50": 1.013083577156067,
+    "p95": 4.150308322906494,
+    "p99": 6.428095998764038
+  },
+  "time-per-output-token(tpot)": {
+    "average": 0.046536957779083656,
+    "p50": 0.046536957779083656,
+    "p95": 0.046536957779083656,
+    "p99": 0.046536957779083656
+  }
+}
+{
+  "total_requests": 300,
+  "successful_requests": 300,
+  "concurrency": 100,
+  "request_timeout": 30,
+  "max_output_tokens": 200,
+  "use_long_context": false,
+  "total_time": 27.266329288482666,
+  "requests_per_second": 11.002581125825412,
+  "total_output_tokens": 56565,
+  "latency": {
+    "average": 8.282346522808075,
+    "p50": 8.06283187866211,
+    "p95": 13.813226807117463,
+    "p99": 14.106667814254761
+  },
+  "tokens_per_second": {
+    "average": 24.437011961967993,
+    "p50": 24.761760194840598,
+    "p95": 14.358255951823228,
+    "p99": 13.40701548842713
+  },
+  "time_to_first_token(ttft)": {
+    "average": 1.821184099515279,
+    "p50": 0.5043096542358398,
+    "p95": 5.976606762409211,
+    "p99": 6.595600640773773
+  },
+  "time-per-output-token(tpot)": {
+    "average": 0.04394213572001267,
+    "p50": 0.04394213572001267,
+    "p95": 0.04394213572001267,
+    "p99": 0.04394213572001267
+  }
+}
+--------------
+{
+  "total_requests": 300,
+  "successful_requests": 300,
+  "concurrency": 100,
+  "request_timeout": 30,
+  "max_output_tokens": 200,
+  "use_long_context": false,
+  "total_time": 21.986567735671997,
+  "requests_per_second": 13.644694506513016,
+  "total_output_tokens": 56381,
+  "latency": {
+    "average": 6.916925689379374,
+    "p50": 7.660427570343018,
+    "p95": 8.482464802265167,
+    "p99": 8.488559277057648
+  },
+  "tokens_per_second": {
+    "average": 27.755659495433186,
+    "p50": 26.055230425334315,
+    "p95": 23.56312844322636,
+    "p99": 22.99415089035269
+  },
+  "time_to_first_token(ttft)": {
+    "average": 0.5118947633107503,
+    "p50": 0.3844921588897705,
+    "p95": 0.9831137418746948,
+    "p99": 0.9872151041030883
+  },
+  "time-per-output-token(tpot)": {
+    "average": 0.036900720803631215,
+    "p50": 0.036900720803631215,
+    "p95": 0.036900720803631215,
+    "p99": 0.036900720803631215
+  }
+}
+{
+  "total_requests": 300,
+  "successful_requests": 300,
+  "concurrency": 100,
+  "request_timeout": 30,
+  "max_output_tokens": 200,
+  "use_long_context": false,
+  "total_time": 24.59438991546631,
+  "requests_per_second": 12.19790371020114,
+  "total_output_tokens": 55108,
+  "latency": {
+    "average": 7.6919744372367855,
+    "p50": 9.217459678649902,
+    "p95": 9.43670358657837,
+    "p99": 9.475129649639129
+  },
+  "tokens_per_second": {
+    "average": 24.70857183519208,
+    "p50": 21.61700317456806,
+    "p95": 21.01983780196414,
+    "p99": 20.009540539919012
+  },
+  "time_to_first_token(ttft)": {
+    "average": 0.30577696561813356,
+    "p50": 0.3309605121612549,
+    "p95": 0.439799439907074,
+    "p99": 0.4712778162956237
+  },
+  "time-per-output-token(tpot)": {
+    "average": 0.04195222162740946,
+    "p50": 0.04195222162740946,
+    "p95": 0.04195222162740946,
+    "p99": 0.04195222162740946
+  }
+}
+ ask
+鉴目所
+系统院 
