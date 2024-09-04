@@ -14,7 +14,7 @@ modelscope download --model 'LLM-Research/Meta-Llama-3-8B-Instruct' --local_dir 
  
 vllm serve qwen/Qwen2-0.5B-Instruct
 
-使用docker配置一个nginx对多个vllm服务进行负载均衡
+使用docker配置一个nginx对多个vllm服务进行负载均衡，实现的效果是http://localhost:2345/v1转发到http://localhost:8100/v1和http://localhost:8101/v1的vllm server上
 > docker run --name nginx-vllm-wyl -p 2345:2345 -v /home/wyl/nginx-docker/nginx.conf:/etc/nginx/nginx.conf:ro -d nginx
  
 > docer stop nginx-vllm-wyl
