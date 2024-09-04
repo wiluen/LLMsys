@@ -1,3 +1,4 @@
+vllm的安装以及大模型的下载
 cuda 12.4  python3.11
 
 pip install vllm
