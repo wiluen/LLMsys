@@ -16,7 +16,9 @@ vllm serve qwen/Qwen2-0.5B-Instruct
 
 使用docker配置一个nginx对多个vllm服务进行负载均衡
 > docker run --name nginx-vllm-wyl -p 2345:2345 -v /home/wyl/nginx-docker/nginx.conf:/etc/nginx/nginx.conf:ro -d nginx
+ 
 > docer stop nginx-vllm-wyl
+
 > docer rm nginx-vllm-wyl
 
 性能对比，吞吐和延迟变优（2vllm+nginx vs 2vllm）
