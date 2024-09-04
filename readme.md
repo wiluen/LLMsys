@@ -8,7 +8,9 @@ export VLLM_USE_MODELSCOPE=True
 
 modelscope download --model 'qwen/Qwen2-0.5B-Instruct' --local_dir '/home/wyl/llm/qwen/Qwen2-0.5B-Instruct'
 
-modelscope download --model 'modelscope/Llama-2-7b-ms' --local_dir '/home/wyl/llm/llama/Llama2-7B'
+modelscope download --model 'modelscope/Llama-2-7b-ms' --local_dir '/home/wyl/llm/llama/Llama2-7B' （chat模板有问题）
+
+modelscope download --model 'LLM-Research/Meta-Llama-3-8B-Instruct' --local_dir '/home/wyl/llm/llama/Meta-Llama-3-8B-Instruct'
  
 vllm serve qwen/Qwen2-0.5B-Instruct
 
