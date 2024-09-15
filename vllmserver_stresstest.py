@@ -1,7 +1,7 @@
 import subprocess
 import time
 import os
-
+# 开启vllm server->启动压测->关闭vllm终端。
 for i in range(2):  # 迭代 10 次，假设你需要执行 10 次
     print(f"Starting iteration {i + 1}")
 
